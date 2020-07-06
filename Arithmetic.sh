@@ -14,3 +14,6 @@ echo $result2
 #UC4
 result3=$(($c+$a/$b))
 echo $result3
+#UC5
+result4=$(($a%$b+$c))
+echo $result4
