@@ -24,3 +24,10 @@ dict[2]=$result2
 dict[3]=$result3
 dict[4]=$result4
 echo "Dictionary:" ${dict[@]}
+#UC7
+for((i=1;i<5;i++))
+do
+	arr[$i]=${dict[$i]}
+done
+
+echo "Required array is :" ${arr[@]}
