@@ -31,3 +31,22 @@ do
 done
 
 echo "Required array is :" ${arr[@]}
+#Uc8
+descendingSort(){
+temp=0
+for((i=1;i<5;i++))
+do
+	for((j=1;j<5-i-1;j++))
+	do
+		if [ ${arr[$j]} -lt ${arr[$j+1]} ]
+		then
+			temp=${arr[$j]}
+			arr[$j]=${arr[$((j+1))]}
+			arr[$((j+1))]=$temp
+		fi
+	done
+done
+}
+
+descendingSort
+echo "ARRAY IN DESCENDING ORDER :" ${arr[@]}
