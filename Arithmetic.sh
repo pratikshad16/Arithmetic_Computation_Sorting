@@ -8,3 +8,6 @@ echo $a $b $c
 #UC2
 result1=$(($a+$b*$c))
 echo $result1
+#UC3
+result2=$(($a*$b+$c))
+echo $result2
