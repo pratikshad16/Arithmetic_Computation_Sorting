@@ -32,21 +32,40 @@ done
 
 echo "Required array is :" ${arr[@]}
 #Uc8
-descendingSort(){
-temp=0
-for((i=1;i<5;i++))
+for(( i=1;i<5;i++ ))
 do
-	for((j=1;j<5-i-1;j++))
+	for(( j=$i;j < 5;j ++ ))
 	do
-		if [ ${arr[$j]} -lt ${arr[$j+1]} ]
+		if [ ${arr[i]} -lt ${arr[$j]} ]
 		then
-			temp=${arr[$j]}
-			arr[$j]=${arr[$((j+1))]}
-			arr[$((j+1))]=$temp
+			temp=${arr[i]}
+			arr[$i]=${arr[$j]}
+			arr[$j]=$temp
 		fi
 	done
 done
-}
-
-descendingSort
-echo "ARRAY IN DESCENDING ORDER :" ${arr[@]}
+echo "array in Descending order:"
+for (( i=1;i<5;i++ ))
+do
+	echo ${arr[$i]}
+done
+echo ${arr[@]}
+#UC9
+for(( i=1;i<5;i++ ))
+do
+        for((j=$i;j<5;j++))
+        do
+                if [ ${arr[i]} -gt ${arr[$j]} ]
+                then
+                        temp=${arr[i]}
+                        arr[$i]=${arr[$j]}
+                        arr[$j]=$temp
+                fi
+        done
+done
+echo "ARRAY IN ASCENDING ORDER:"
+for (( i=1;i<5;i++))
+do
+	echo ${arr[$i]}
+done
+echo ${arr[@]}
